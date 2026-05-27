@@ -592,6 +592,14 @@
       .process-visual { display: none; }
       footer { flex-direction: column; gap: 28px; text-align: center; }
       .hero-title { font-size: clamp(52px, 13vw, 100px); }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-scroll { left: 50%; transform: translateX(-50%); width: max-content; }
+    }
+
+    /* ── HIDE CURSOR ON TOUCH DEVICES ── */
+    @media (hover: none) {
+      #cursor, #cursor-ring { display: none; }
+      body { cursor: auto; }
     }
   </style>
 </head>
@@ -701,7 +709,7 @@
         <circle cx="19" cy="19" r="3" fill="currentColor"/>
       </svg>
       <div class="service-name">Brand Identity<br />&amp; Strategy</div>
-      <p class="service-desc">Logo design, typography systems, colour palettes, and brand guidelines that communicate who you are before a single word is read.</p>
+      <p class="service-desc">Typography systems, colour palettes, and brand guidelines that communicate who you are before a single word is read.</p>
     </div>
 
     <div class="service-card">
@@ -877,6 +885,11 @@
     </div>
 
     <div class="form-field">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="+27 82 000 0000" />
+    </div>
+
+    <div class="form-field">
       <label for="service">Service You're Interested In</label>
       <select id="service" name="service" required>
         <option value="" disabled selected>Select a service…</option>
@@ -891,21 +904,13 @@
     </div>
 
     <div class="form-field">
-      <label for="budget">Approximate Budget</label>
-      <select id="budget" name="budget">
-        <option value="" disabled selected>Select a range…</option>
-        <option value="Under £2k">Under £2,000</option>
-        <option value="£2k–£5k">£2,000 – £5,000</option>
-        <option value="£5k–£10k">£5,000 – £10,000</option>
-        <option value="£10k+">£10,000+</option>
-        <option value="Not sure">Not sure yet</option>
-      </select>
-    </div>
-
-    <div class="form-field">
       <label for="message">Tell Us About Your Project</label>
       <textarea id="message" name="message" placeholder="What are you building? What problem does it solve? Any deadlines?" required></textarea>
     </div>
+
+    <p style="font-size:11px;color:var(--silver-dim);letter-spacing:.05em;line-height:1.7;margin-top:4px;">
+      💬 Pricing is provided on application — we'll put together a custom quote based on your project.
+    </p>
 
     <div class="form-submit">
       <button type="submit">Send Message →</button>
